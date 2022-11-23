@@ -20,9 +20,10 @@ public class TP1 {
        //process.printList(TASKs);
     }
 
-    public static void menu(){
+    public static void menu()throws IOException {
        String opcao[]={"FCFS","SJF","RR","	Prioridade"};
        int  inpuT = -1;
+
        while(inpuT != 44){
             System.out.println("\n==========  Escolha o numero da opção  ==========");
             System.out.printf("0 - FCFS\n");
@@ -30,18 +31,22 @@ public class TP1 {
             System.out.printf("2 - RR\n");
             System.out.printf("3 - Prioridade \n");
             System.out.printf("44 - sair \n");
-            System.out.printf("Opcao : ");  inpuT = new Scanner(System.in).nextInt();
+            System.out.printf("Opcao : ");  
+            inpuT = new Scanner(System.in).nextInt();
 
             if(testInput(inpuT)){
                 System.out.println("Algotimo "+ opcao[inpuT]);
                     if((inpuT == 0 )){
-                        escalonador.FCFC();
+                        TASKs = TP1.input("D:\\Documentos\\Code\\JAVA\\SO\\TP1\\src\\FCFS-SJF-6.txt");
+                       
+                        TP1.escalonador.FCFC(TASKs);
                     }else if(inpuT == 1){
-                        escalonador.SJR();
+                        TASKs = TP1.input("D:\\Documentos\\Code\\JAVA\\SO\\TP1\\src\\FCFS-SJF-6.txt");
+                        TP1.escalonador.SJR(TASKs);
                     }else if(inpuT == 2){
-                        escalonador.RR();
+                        TP1.escalonador.RR();
                     }else {
-                        escalonador.Prioridade();
+                        TP1.escalonador.Prioridade();
                     }   
             }else
                 if(inpuT != 44)
@@ -59,7 +64,7 @@ public class TP1 {
             return false;
     }
 
-    public static LinkedList input(String dir)  throws IOException{
+    public static LinkedList<Tarefa> input(String dir)  throws IOException{
         //*** */
         FileInputStream stream   = new FileInputStream(dir);
         InputStreamReader reader = new InputStreamReader(stream);
