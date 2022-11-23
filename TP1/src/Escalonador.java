@@ -1,6 +1,6 @@
 import java.util.LinkedList;
  
-public class Process {
+public class Escalonador {
 
     /**
      *
@@ -19,7 +19,7 @@ public class Process {
     public void addTarefa(Tarefa task){
         this.FilaProntos.addLast(task);
     }
-    public Process(){
+    public Escalonador(){
         this.FilaProntos = new LinkedList<Tarefa>();
     }
     
