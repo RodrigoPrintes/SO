@@ -3,11 +3,27 @@ public class Processo {
     private int tw;
     private int ti;
     private int tf;
-    
+    private String PID;
  
 
 
   
+    public Processo(int tt, int tw, int ti, int tf, String pID) {
+        this.tt = tt;
+        this.tw = tw;
+        this.ti = ti;
+        this.tf = tf;
+        PID = pID;
+    }
+
+    public String getPID() {
+        return PID;
+    }
+
+    public void setPID(String pID) {
+        PID = pID;
+    }
+
     public Processo(int tt, int tw, int tempoIngress, int tempoFinal) {
         this.tt = tt;
         this.tw = tw;

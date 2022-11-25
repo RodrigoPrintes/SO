@@ -12,12 +12,8 @@ public class TP1 {
         
         System.out.println("    TP1 - Escalonamento de Processos!\n");
      
-        
         TP1.menu();
-        String dir = "D:\\Documentos\\Code\\JAVA\\SO\\TP1\\src\\FCFS-SJF-6.txt";
-        //TASKs = TP1.input(dir);
-
-       //process.printList(TASKs);
+      
     }
 
     public static void menu()throws IOException {
@@ -57,11 +53,9 @@ public class TP1 {
                 }
         }
     }
+   
     private static boolean testInput(int input){
-        if(input >=0 && input <= 3)
-            return true;
-        else
-            return false;
+       return (input >=0 && input <= 3);
     }
 
     public static LinkedList<Tarefa> input(String dir)  throws IOException{
