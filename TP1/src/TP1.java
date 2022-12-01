@@ -7,7 +7,7 @@ public class TP1 {
     
     static LinkedList<Tarefa>TASKs;
     static Escalonador escalonador= new Escalonador();
-
+    
     public static void main(String[] args) throws IOException  {
         
         System.out.println("    TP1 - Escalonamento de Processos!\n");
@@ -22,12 +22,13 @@ public class TP1 {
 
        while(inpuT != 44){
             System.out.println("\n==========  Escolha o numero da opção  ==========");
-            System.out.printf("0 - FCFS\n");
-            System.out.printf("1 - SJF\n");
-            System.out.printf("2 - RR\n");
-            System.out.printf("3 - Prioridade \n");
-            System.out.printf("44 - sair \n");
-            System.out.printf("Opcao : ");  
+            System.out.printf("0 - FCFS\n "+
+                              "1 - SJF\n"+
+                              "2 - RR\n"+
+                              "3 - Prioridade \n"+
+                              "44 - sair \n"+
+                              "Opcao : ");
+                                
             inpuT = new Scanner(System.in).nextInt();
 
             if(testInput(inpuT)){
@@ -40,9 +41,12 @@ public class TP1 {
                         TASKs = TP1.input("D:\\Documentos\\Code\\JAVA\\SO\\TP1\\src\\FCFS-SJF-6.txt");
                         TP1.escalonador.SJR(TASKs);
                     }else if(inpuT == 2){
-                        TP1.escalonador.RR();
+                        TASKs = TP1.input("D:\\Documentos\\Code\\JAVA\\SO\\TP1\\src\\RR-5.txt");
+                        
+                        TP1.escalonador.RR(TASKs);
                     }else {
-                        TP1.escalonador.Prioridade();
+                        TASKs = TP1.input("D:\\Documentos\\Code\\JAVA\\SO\\TP1\\src\\Prio-6.txt");
+                        TP1.escalonador.Prioridade(TASKs);
                     }   
             }else
                 if(inpuT != 44)
