@@ -7,15 +7,20 @@ import java.util.Scanner;
 public class Escalonador {
 
     /**
-     *
+     * 
      */
     private LinkedList<Tarefa>FilaProntos;  
     private int quantum;
+
     public LinkedList<Tarefa> getFilaProntos() {
         return FilaProntos;
     }
 
 
+    /**
+     * Fila destina as tarefas que chegam e depois de organizadas podem ir para fila de execução.
+     * @param filaProntos
+     */
     public void setFilaProntos(LinkedList<Tarefa> filaProntos) {
         FilaProntos = filaProntos;
     }
@@ -23,11 +28,18 @@ public class Escalonador {
     public void addTarefa(Tarefa task){
         this.FilaProntos.addLast(task);
     }
+    /**
+     * Contrutor do escalonador, cria uma nova fila de prontos para esperar as tarefas.
+     */
     public Escalonador(){
         this.FilaProntos = new LinkedList<Tarefa>();
         this.quantum = 0;
     }
     
+    /**
+     * Faz uma copia das tarefas recepidas no input para não modificar as filas de entrada originais.
+     * @param task
+     */
     private void CloneProcesso(LinkedList<Tarefa> task){
         this.FilaProntos = new LinkedList<Tarefa>();
          
@@ -64,13 +76,15 @@ public class Escalonador {
                            "Tw = "+(tw/FilaProntos.size())+"\n");     
         
     }
+    
     public void SJR(LinkedList<Tarefa> task){
         CloneProcesso(task);
         LinkedList<Tarefa> FilaExecucao = new LinkedList<Tarefa>();
         LinkedList<Processo> Times = new LinkedList<Processo>();
         double tt=0,tw=0;
-        sortL(FilaProntos,0);
       
+        sortL(FilaProntos,0);
+       
         int time = 0;
 
        //Ordenar no tempo
@@ -96,7 +110,7 @@ public class Escalonador {
              * Organizar pelo tempo de execução
              */
             sortL(FilaExecucao, 1);
-            System.out.println();
+          
 
             while(!FilaExecucao.isEmpty()){
 
@@ -110,10 +124,13 @@ public class Escalonador {
                     FilaExecucao.removeFirst();
                 }
                     
-            }    
+            }
+            if(FilaProntos.size()>= 1 && time < t.getT_Ingresso() ){
+                time++;
+                }    
         
        }
-
+      
        System.out.println("Ordem de execução (PID)");   
        for (Processo p : Times){
            System.out.println("PID : " + p.getPID());
@@ -174,9 +191,15 @@ public class Escalonador {
 
         System.out.println("Quantum: ");
         quantum = new Scanner(System.in).nextInt();
-        
+      
         CloneProcesso(task);
+
+        
+
+
         sortL(FilaProntos,0);
+
+       
 
         LinkedList<Tarefa> FilaExecucao = new LinkedList<Tarefa>();
         LinkedList<Processo> Times = new LinkedList<Processo>();
@@ -187,10 +210,12 @@ public class Escalonador {
         double[] tt = new double[task.size()];
       
         int time = 0;
-      
+        
+        
+
         while(!FilaProntos.isEmpty()){
             Tarefa t = FilaProntos.getFirst();
-            
+          
             while(FilaProntos.size() >=1 && time >= t.getT_Ingresso()){
                 /*
                 * Pegar todos que chegaram ao mesmo tempo
@@ -236,7 +261,10 @@ public class Escalonador {
                
 
             }
-          
+            if(FilaProntos.size()>= 1 && time < t.getT_Ingresso() ){
+                time++;
+            }
+        
         }
        
         int i = 0;

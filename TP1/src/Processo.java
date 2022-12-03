@@ -8,6 +8,14 @@ public class Processo {
 
 
   
+    /**
+     * Construtor de processo, 
+     * @param tt
+     * @param tw
+     * @param ti
+     * @param tf
+     * @param pID
+     */
     public Processo(int tt, int tw, int ti, int tf, String pID) {
         this.tt = tt;
         this.tw = tw;
