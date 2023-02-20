@@ -1,0 +1,22 @@
+-- Welcome to Shell 
+Press help for Commands--
+
+/mnt/d/Documentos/Code/python/SO/Shell/
+==========
+['Nova pasta']
+==========
+['Novo(a) Documento de Texto.txt', 'Shell.py']
+==========
+/mnt/d/Documentos/Code/python/SO/Shell/Nova pasta
+==========
+['Nova pasta']
+==========
+['Novo(a) Documento de Texto.txt']
+==========
+/mnt/d/Documentos/Code/python/SO/Shell/Nova pasta/Nova pasta
+==========
+[]
+==========
+['Novo(a) Documento de Texto.txt']
+==========
+ok
