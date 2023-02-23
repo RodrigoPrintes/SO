@@ -1,0 +1,55 @@
+Comandos:
+	Os  comandos existentes funcional da mesma forma que o terminal linux, -exeto pelo executar
+	ao inves de './<nome do arquivo>' digite './'espaço'<nome do arquivo>'
+	- ls : 
+	* Use: ls
+	* lista os arquivos do diretorio atual
+
+  	- pwd :
+  	* Use: pwd
+  	* Mostra o diretorio atual
+  	
+  	- rm :
+  	* Use : rm -r <nome do diretorio>
+  	        rm <arquivo>
+  	* Remove o diretorio ou arquivo
+  	
+  	- cat :
+  	* Use: cat <nome do arquvo>
+  	* Abre o arquivo escolhido
+  	
+  	
+  	- grep :
+  	* Use: grep <palavra> <arquivo.txt>
+  	* funciona apenas palavras em textos ou letras      
+  	* Procura uma palavra em um arquivo de texto
+  	
+  	- cd :
+  	* Use: cd .. voltar para diretorio anterior
+	* Use: cd <diretorio> sem a '/' no final ou na frente apenas o nome do diretorio	
+  	
+  	- mkdir :
+  	* Use: mkdir <nome do diretorio>     
+  	* Cria um novo diretorio
+	
+	- cp:
+	* cp <arquivoOrigem> <diretorioDestino>
+  	* copia um arquivo para outro diretorio
+  	
+  	- mv:
+	* mv <arquivoOrigem> <diretorioDestino>
+  	* m0ve um arquivo para outro diretorio
+ 
+	- uname:
+	* use : uname
+	* Mostra informaçoes do sistema operacional
+
+	-history:
+	* use history
+	
+	-./:
+	* use ./ script.py #limitado apenas executar exrip python
+	
+	**Bonus de pipe e Backgroud não foram implementados
+  	
+  	
